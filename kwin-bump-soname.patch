@@ -1,0 +1,12 @@
+diff -up kwin-master/src/CMakeLists.txt.omv~ kwin-master/src/CMakeLists.txt
+--- kwin-master/src/CMakeLists.txt.omv~	2023-05-20 23:14:53.301886620 +0200
++++ kwin-master/src/CMakeLists.txt	2023-05-20 23:15:11.852120349 +0200
+@@ -20,7 +20,7 @@ endif()
+ add_library(kwin SHARED)
+ set_target_properties(kwin PROPERTIES
+    VERSION ${PROJECT_VERSION}
+-   SOVERSION ${PROJECT_VERSION_MAJOR}
++   SOVERSION 6
+ )
+ 
+ target_compile_definitions(kwin PRIVATE
