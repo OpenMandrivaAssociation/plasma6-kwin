@@ -121,7 +121,7 @@ BuildRequires: x11-server-xwayland
 BuildRequires: hwdata
 #BuildRequires: libhybris
 Requires: %{name}-windowsystem = %{EVRD}
-Requires: plasma-framework
+Requires: kf6-plasma-framework
 #(tpg) this is needed for kcm_kwin_effects
 Requires: glib-networking
 # Obsolete packages that used to be split out solely for old policy reasons
