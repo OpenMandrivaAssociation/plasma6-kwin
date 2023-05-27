@@ -14,7 +14,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230520
+%define git 20230527
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
