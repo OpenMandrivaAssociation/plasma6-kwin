@@ -14,7 +14,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230606
+%define git 20230609
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -216,7 +216,6 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/config.kcfg/*
 %{_datadir}/kwin
 %{_datadir}/knotifications6/*
-%{_datadir}/kpackage/kcms/kcm_kwin_virtualdesktops
 %{_datadir}/icons/*/*/*/*
 %{_datadir}/dbus-1/*/*
 %{_libdir}/kconf_update_bin/kwin5_update_default_rules
@@ -227,11 +226,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_libdir}/libexec/kwin*
 %{_datadir}/qlogging-categories6/*
 %{_datadir}/knsrcfiles/*.knsrc
-%{_datadir}/kpackage/kcms/kcm_kwin_effects
-%{_datadir}/kpackage/kcms/kcm_kwindecoration
-%{_datadir}/kpackage/kcms/kcm_kwinrules
 %{_datadir}/krunner/dbusplugins/kwin-runner-windows.desktop
-%{_datadir}/kpackage/kcms/kcm_virtualkeyboard
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_kwin_effects.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_kwin_scripts.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_kwin_virtualdesktops.so
@@ -251,7 +246,6 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/applications/kcm_kwinrules.desktop
 %{_datadir}/applications/kcm_virtualkeyboard.desktop
 %{_datadir}/applications/kwincompositing.desktop
-%{_datadir}/kpackage/kcms/kcm_kwin_scripts/contents/ui/main.qml
 
 %files x11
 %{_bindir}/kwin_x11
@@ -263,7 +257,6 @@ Development files for the KDE Frameworks 5 Win library.
 %{_prefix}/lib/systemd/user/plasma-kwin_wayland.service
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_kwinxwayland.so
 %{_datadir}/applications/kcm_kwinxwayland.desktop
-%{_datadir}/kpackage/kcms/kcm_kwinxwayland/contents/ui/main.qml
 
 %files -n %{effectsname}
 %{_libdir}/libkwineffects.so.%{effectsmajor}
