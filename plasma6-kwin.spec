@@ -14,7 +14,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230609
+%define git 20230707
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -238,6 +238,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwintabbox.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwintouchscreen.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kwincompositing.so
+%{_qtdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so
 %{_datadir}/applications/kcm_kwin_effects.desktop
 %{_datadir}/applications/kcm_kwin_scripts.desktop
 %{_datadir}/applications/kcm_kwin_virtualdesktops.desktop
@@ -276,3 +277,4 @@ Development files for the KDE Frameworks 5 Win library.
 %{_libdir}/libkwingl*utils.so
 %{_libdir}/cmake/KWinDBusInterface
 %{_libdir}/cmake/KWinEffects
+%{_libdir}/cmake/KWin

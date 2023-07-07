@@ -1,8 +1,8 @@
-diff -up kwin-master/src/CMakeLists.txt.omv~ kwin-master/src/CMakeLists.txt
---- kwin-master/src/CMakeLists.txt.omv~	2023-05-20 23:14:53.301886620 +0200
-+++ kwin-master/src/CMakeLists.txt	2023-05-20 23:15:11.852120349 +0200
-@@ -20,7 +20,7 @@ endif()
- add_library(kwin SHARED)
+diff -up kwin-master/src/CMakeLists.txt.1~ kwin-master/src/CMakeLists.txt
+--- kwin-master/src/CMakeLists.txt.1~	2023-07-07 13:18:39.102196469 +0200
++++ kwin-master/src/CMakeLists.txt	2023-07-07 13:19:26.804725268 +0200
+@@ -27,7 +27,7 @@ add_library(kwin SHARED)
+ target_include_directories(kwin INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/kwin>")
  set_target_properties(kwin PROPERTIES
     VERSION ${PROJECT_VERSION}
 -   SOVERSION ${PROJECT_VERSION_MAJOR}
