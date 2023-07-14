@@ -116,6 +116,8 @@ BuildRequires: pkgconfig(lcms2)
 BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(libdisplay-info)
 BuildRequires: cmake(KPipeWire)
+# Really just "don't install the Plasma 5 version"
+BuildRequires: plasma6-xdg-desktop-portal-kde
 # FIXME Package QAccessibilityClient6 and BR it
 BuildRequires: x11-server-xwayland
 BuildRequires: hwdata
