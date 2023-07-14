@@ -103,7 +103,7 @@ BuildRequires: cmake(KF6Wayland)
 BuildRequires: cmake(KDecoration2)
 BuildRequires: cmake(KF6IdleTime)
 BuildRequires: cmake(KF6GlobalAccel)
-BuildRequires: cmake(KScreenLocker)
+BuildRequires: cmake(KScreenLocker) > 5.27.50
 BuildRequires: cmake(Breeze)
 BuildRequires: cmake(KF6Kirigami2)
 BuildRequires: cmake(KF6Runner)
@@ -115,7 +115,7 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: pkgconfig(lcms2)
 BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(libdisplay-info)
-BuildRequires: cmake(KPipeWire)
+BuildRequires: cmake(KPipeWire) > 5.27.50
 # Really just "don't install the Plasma 5 version"
 BuildRequires: plasma6-xdg-desktop-portal-kde
 # FIXME Package QAccessibilityClient6 and BR it
