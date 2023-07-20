@@ -22,7 +22,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 5.240.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -157,6 +157,8 @@ X11 Window System support for KWin.
 Summary: Wayland Window System support for KWin
 Requires: %{name} = %{EVRD}
 Provides: %{name}-windowsystem = %{EVRD}
+Requires: %mklibname Qt6WaylandCompositor
+Requires: %mklibname Qt6WlShellIntegration
 Group: System/Libraries
 
 %description wayland
