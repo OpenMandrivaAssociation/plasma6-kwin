@@ -14,7 +14,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230715
+%define git 20230722
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -22,7 +22,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 5.240.0
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
