@@ -1,14 +1,3 @@
-%define effectsmajor 14
-%define effectsname %mklibname keffects
-%define effectsdname %mklibname keffects -d
-
-%define glutilsmajor 14
-%define glutilsname %mklibname kwinglutils
-%define glutilsdname %mklibname kwinglutils -d
-
-%define kcmkwincommonmajor 5
-%define kcmkwincommon %mklibname kcmkwincommon
-
 %define plasmaver 5.27.80
 #%(echo %{version} |cut -d. -f1-3)
 
@@ -22,7 +11,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 5.240.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -140,6 +129,10 @@ Obsoletes: %{mklibname kwinglutils 13}
 Obsoletes: %{mklibname kwinglutils 13}-debuginfo
 Obsoletes: %{mklibname kwinxrenderutils 13}
 Obsoletes: %{mklibname kwinxrenderutils 13}-debuginfo
+Obsoletes: %{mklibname kwin}
+Obsoletes: %{mklibname kwinglutils}
+Obsoletes: %{mklibname keffects}
+Obsoletes: %{mklibname kcmkwincommon}
 
 %description
 The KWin window manager.
@@ -164,43 +157,12 @@ Group: System/Libraries
 %description wayland
 Wayland Window System support for KWin.
 
-%package -n %{effectsname}
-Summary: KWin effects library
-Group: System/Libraries
-Requires: %{name} = %{EVRD}
-
-%description -n %{effectsname}
-KWin effects library.
-
-%package -n %{glutilsname}
-Summary: KWin GL utils library
-Group: System/Libraries
-Requires: %{name} = %{EVRD}
-
-%description -n %{glutilsname}
-KWin GL utils library.
-
-%package -n %{kcmkwincommon}
-Summary: KWin KCM library
-Group: System/Libraries
-Requires: %{name} = %{EVRD}
-
-%description -n %{kcmkwincommon}
-KWin KCM library.
-
 %package devel
 Summary: Development files for the KDE Frameworks 5 Win library
 Group: Development/KDE and Qt
-Requires: %{effectsname} = %{EVRD}
-Requires: %{glutilsname} = %{EVRD}
-Provides: %{effectsdname} = %{EVRD}
-Provides: %{glutilsdname} = %{EVRD}
 
 %description devel
 Development files for the KDE Frameworks 5 Win library.
-
-%libpackage kwin 6
-%{_libdir}/libkwin.so.5*
 
 %prep
 %autosetup -p1 -n kwin-%{?git:master}%{!?git:%{version}}
@@ -254,6 +216,10 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/applications/kcm_kwinrules.desktop
 %{_datadir}/applications/kcm_virtualkeyboard.desktop
 %{_datadir}/applications/kwincompositing.desktop
+%{_libdir}/libkwineffects.so*
+%{_libdir}/libkwingl*utils.so*
+%{_libdir}/libkcmkwincommon.so*
+%{_libdir}/libkwin.so*
 
 %files x11
 %{_bindir}/kwin_x11
@@ -265,18 +231,6 @@ Development files for the KDE Frameworks 5 Win library.
 %{_prefix}/lib/systemd/user/plasma-kwin_wayland.service
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_kwinxwayland.so
 %{_datadir}/applications/kcm_kwinxwayland.desktop
-
-%files -n %{effectsname}
-%{_libdir}/libkwineffects.so.%{effectsmajor}
-%{_libdir}/libkwineffects.so.%{plasmaver}
-
-%files -n %{glutilsname}
-%{_libdir}/libkwingl*utils.so.%{glutilsmajor}
-%{_libdir}/libkwingl*utils.so.%{plasmaver}
-
-%files -n %{kcmkwincommon}
-%{_libdir}/libkcmkwincommon.so.%{kcmkwincommonmajor}
-%{_libdir}/libkcmkwincommon.so.%{plasmaver}
 
 %files devel
 %{_includedir}/*
