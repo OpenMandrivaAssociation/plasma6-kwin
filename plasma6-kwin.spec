@@ -11,7 +11,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 5.240.0
-Release: %{?git:0.%{git}.}4
+Release: %{?git:0.%{git}.}3
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
