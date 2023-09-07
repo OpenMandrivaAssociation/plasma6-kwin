@@ -11,7 +11,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 5.240.0
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -125,14 +125,6 @@ Obsoletes: %{effectname} < %{EVRD}
 %if %omvver > 4050000
 Requires: %{name}-wayland
 %endif
-Obsoletes: %{mklibname kwinglutils 13}
-Obsoletes: %{mklibname kwinglutils 13}-debuginfo
-Obsoletes: %{mklibname kwinxrenderutils 13}
-Obsoletes: %{mklibname kwinxrenderutils 13}-debuginfo
-Obsoletes: %{mklibname kwin}
-Obsoletes: %{mklibname kwinglutils}
-Obsoletes: %{mklibname keffects}
-Obsoletes: %{mklibname kcmkwincommon}
 
 %description
 The KWin window manager.
