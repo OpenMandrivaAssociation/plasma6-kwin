@@ -3,7 +3,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230918
+%define git 20230924
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -24,6 +24,7 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
 Patch2: kwin-bump-soname.patch
+Patch3: kwin-20230924-compile.patch
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel

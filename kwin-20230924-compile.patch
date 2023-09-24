@@ -1,0 +1,23 @@
+diff -up kwin-master/autotests/integration/test_helpers.cpp.omv~ kwin-master/autotests/integration/test_helpers.cpp
+--- kwin-master/autotests/integration/test_helpers.cpp.omv~	2023-09-24 16:53:09.647666183 +0200
++++ kwin-master/autotests/integration/test_helpers.cpp	2023-09-24 16:53:15.102120742 +0200
+@@ -262,7 +262,6 @@ CursorShapeDeviceV1::~CursorShapeDeviceV
+ 
+ FakeInput::~FakeInput()
+ {
+-    destroy();
+ }
+ 
+ static struct
+diff -up kwin-master/src/backends/fakeinput/fakeinputbackend.cpp.omv~ kwin-master/src/backends/fakeinput/fakeinputbackend.cpp
+--- kwin-master/src/backends/fakeinput/fakeinputbackend.cpp.omv~	2023-09-24 16:49:08.893739148 +0200
++++ kwin-master/src/backends/fakeinput/fakeinputbackend.cpp	2023-09-24 16:49:34.468136684 +0200
+@@ -42,7 +42,7 @@ protected:
+     void org_kde_kwin_fake_input_touch_frame(Resource *resource) override;
+     void org_kde_kwin_fake_input_pointer_motion_absolute(Resource *resource, wl_fixed_t x, wl_fixed_t y) override;
+     void org_kde_kwin_fake_input_keyboard_key(Resource *resource, uint32_t button, uint32_t state) override;
+-    void org_kde_kwin_fake_input_destroy(Resource *resource) override;
++    void org_kde_kwin_fake_input_destroy(Resource *resource);
+ };
+ 
+ QList<quint32> FakeInputBackendPrivate::touchIds = QList<quint32>();
