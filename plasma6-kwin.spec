@@ -3,7 +3,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20230924
+%define git 20230927
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -213,6 +213,8 @@ Development files for the KDE Frameworks 5 Win library.
 %{_libdir}/libkwingl*utils.so*
 %{_libdir}/libkcmkwincommon.so*
 %{_libdir}/libkwin.so*
+%{_datadir}/kconf_update/*.py
+%{_datadir}/kconf_update/*.upd
 
 %files x11
 %{_bindir}/kwin_x11
