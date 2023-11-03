@@ -3,7 +3,7 @@
 
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20231023
+%define git 20231103
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
@@ -210,8 +210,6 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/applications/kcm_kwinrules.desktop
 %{_datadir}/applications/kcm_virtualkeyboard.desktop
 %{_datadir}/applications/kwincompositing.desktop
-%{_libdir}/libkwineffects.so*
-%{_libdir}/libkwingl*utils.so*
 %{_libdir}/libkcmkwincommon.so*
 %{_libdir}/libkwin.so*
 %{_datadir}/kconf_update/*.py
@@ -230,8 +228,5 @@ Development files for the KDE Frameworks 5 Win library.
 
 %files devel
 %{_includedir}/*
-%{_libdir}/libkwineffects.so
-%{_libdir}/libkwingl*utils.so
 %{_libdir}/cmake/KWinDBusInterface
-%{_libdir}/cmake/KWinEffects
 %{_libdir}/cmake/KWin
