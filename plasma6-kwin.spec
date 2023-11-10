@@ -1,16 +1,13 @@
-%define plasmaver 5.27.80
-#%(echo %{version} |cut -d. -f1-3)
-
-%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-
-%define git 20231103
+%define plasmaver %(echo %{version} |cut -d. -f1-3)
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+#define git 20231103
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 5.240.0
+Version: 5.27.80
 Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
@@ -18,12 +15,11 @@ Group: System/Libraries
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kwin/-/archive/master/kwin-master.tar.bz2#/kwin-%{git}.tar.bz2
 %else
-Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.tar.xz
 %endif
 #Patch0: kwin-5.10.3-workaround-clang-bug-33617.patch
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
-Patch2: kwin-bump-soname.patch
 Patch3: kwin-20230924-compile.patch
 
 BuildRequires: pkgconfig(egl)
