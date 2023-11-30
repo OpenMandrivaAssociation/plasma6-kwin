@@ -7,8 +7,8 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 5.27.80
-Release: %{?git:0.%{git}.}2
+Version: 5.90.0
+Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -20,7 +20,6 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 #Patch0: kwin-5.10.3-workaround-clang-bug-33617.patch
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
-Patch3: kwin-20230924-compile.patch
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
@@ -80,16 +79,16 @@ BuildRequires: pkgconfig(xi)
 BuildRequires: pkgconfig(sm)
 BuildRequires: pkgconfig(libcap)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(KF6Activities)
+BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6DocTools)
 BuildRequires: cmake(KF6NewStuff)
 BuildRequires: cmake(KF6KCMUtils)
 BuildRequires: cmake(KF6Crash)
 BuildRequires: cmake(KF6Notifications)
-BuildRequires: cmake(KF6Plasma)
-BuildRequires: cmake(KF6PlasmaQuick)
-BuildRequires: cmake(KF6Wayland)
+BuildRequires: cmake(Plasma) >= 5.90.0
+BuildRequires: cmake(PlasmaQuick) >= 5.90.0
+BuildRequires: cmake(Wayland) >= 5.90.0
 BuildRequires: cmake(KDecoration2)
 BuildRequires: cmake(KF6IdleTime)
 BuildRequires: cmake(KF6GlobalAccel)
@@ -206,6 +205,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/applications/kcm_kwinrules.desktop
 %{_datadir}/applications/kcm_virtualkeyboard.desktop
 %{_datadir}/applications/kwincompositing.desktop
+%{_datadir}/applications/org.kde.kwin.killer.desktop
 %{_libdir}/libkcmkwincommon.so*
 %{_libdir}/libkwin.so*
 %{_datadir}/kconf_update/*.py
