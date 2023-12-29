@@ -24,6 +24,7 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
 BuildRequires: pkgconfig(epoxy)
+BuildRequires: cmake(QAccessibilityClient6)
 BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Concurrent)
 BuildRequires: cmake(Qt6Core)
