@@ -7,7 +7,7 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 5.92.0
+Version: 5.93.0
 Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
@@ -210,6 +210,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_libdir}/libkwin.so*
 %{_datadir}/kconf_update/*.py
 %{_datadir}/kconf_update/*.upd
+%{_libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
 
 %files x11
 %{_bindir}/kwin_x11
