@@ -1,19 +1,21 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20231103
+%define git 20240217
+%define gitbranch Plasma/6.0
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 # (tpg) optimize it a bit
 %global optflags %{optflags} -O3
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 5.93.0
+Version: 5.94.0
 Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/plasma/kwin/-/archive/master/kwin-master.tar.bz2#/kwin-%{git}.tar.bz2
+Source0:	https://invent.kde.org/plasma/kwin/-/archive/%{gitbranch}/kwin-%{gitbranchd}.tar.bz2#/kwin-%{git}.tar.bz2
 %else
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.tar.xz
 %endif
@@ -154,7 +156,7 @@ Group: Development/KDE and Qt
 Development files for the KDE Frameworks 5 Win library.
 
 %prep
-%autosetup -p1 -n kwin-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kwin-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
@@ -208,9 +210,9 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/applications/org.kde.kwin.killer.desktop
 %{_libdir}/libkcmkwincommon.so*
 %{_libdir}/libkwin.so*
-%{_datadir}/kconf_update/*.py
 %{_datadir}/kconf_update/*.upd
 %{_libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
+%{_libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
 
 %files x11
 %{_bindir}/kwin_x11
