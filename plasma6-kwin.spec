@@ -9,7 +9,7 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 6.0.0
+Version: 6.0.1
 Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
@@ -213,6 +213,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_datadir}/kconf_update/*.upd
 %{_libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
 %{_libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
+%{_libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default
 
 %files x11
 %{_bindir}/kwin_x11
