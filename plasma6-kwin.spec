@@ -10,7 +10,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 6.0.4.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -22,6 +22,7 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 #Patch0: kwin-5.10.3-workaround-clang-bug-33617.patch
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
+Patch0:	https://src.fedoraproject.org/rpms/kwin/raw/rawhide/f/backport-linux-drm-syncobj-v1-support.patch
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
