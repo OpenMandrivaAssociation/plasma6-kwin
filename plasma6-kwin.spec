@@ -10,7 +10,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 6.0.5
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -122,9 +122,10 @@ Requires: glib-networking
 %define effectmajor 1
 %define effectname %mklibname kwin4_effect_builtins 1
 Obsoletes: %{effectname} < %{EVRD}
-%if %omvver > 4050000
-Requires: %{name}-wayland
-%endif
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DBUILD_WITH_QT6:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 The KWin window manager.
@@ -156,20 +157,7 @@ Group: Development/KDE and Qt
 %description devel
 Development files for the KDE Frameworks 5 Win library.
 
-%prep
-%autosetup -p1 -n kwin-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
+%install -a
 %find_lang %{name} --all-name --with-html --with-man
 
 %files -f %{name}.lang
