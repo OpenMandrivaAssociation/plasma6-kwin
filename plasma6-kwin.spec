@@ -9,8 +9,8 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 6.0.5
-Release: %{?git:0.%{git}.}2
+Version: 6.1.0
+Release: %{?git:0.%{git}.}1
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
@@ -22,7 +22,6 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 #Patch0: kwin-5.10.3-workaround-clang-bug-33617.patch
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
-Patch0:	https://src.fedoraproject.org/rpms/kwin/raw/rawhide/f/backport-linux-drm-syncobj-v1-support.patch
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
@@ -157,9 +156,6 @@ Group: Development/KDE and Qt
 %description devel
 Development files for the KDE Frameworks 5 Win library.
 
-%install -a
-%find_lang %{name} --all-name --with-html --with-man
-
 %files -f %{name}.lang
 %{_datadir}/applications/kcm_kwintabbox.desktop
 %{_datadir}/config.kcfg/*
@@ -203,6 +199,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
 %{_libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
 %{_libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default
+%{_libdir}/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts
 
 %files x11
 %{_bindir}/kwin_x11
