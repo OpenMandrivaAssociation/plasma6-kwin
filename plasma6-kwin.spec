@@ -10,7 +10,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 6.2.4
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 URL: https://kde.org/
 License: GPL
 Group: System/Libraries
@@ -82,6 +82,8 @@ BuildRequires: pkgconfig(xkbcommon-x11)
 BuildRequires: pkgconfig(xi)
 BuildRequires: pkgconfig(sm)
 BuildRequires: pkgconfig(libcap)
+BuildRequires: pkgconfig(libei-1.0)
+BuildRequires: pkgconfig(libeis-1.0)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6Declarative)
