@@ -9,7 +9,7 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 6.2.5
+Version: 6.3.0
 Release: %{?git:0.%{git}.}1
 URL: https://kde.org/
 License: GPL
@@ -95,7 +95,7 @@ BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(Plasma) >= 5.90.0
 BuildRequires: cmake(PlasmaQuick) >= 5.90.0
 BuildRequires: cmake(Wayland) >= 5.90.0
-BuildRequires: cmake(KDecoration2)
+BuildRequires: cmake(KDecoration3)
 BuildRequires: cmake(KF6IdleTime)
 BuildRequires: cmake(KF6GlobalAccel)
 BuildRequires: cmake(KScreenLocker) > 5.27.50
@@ -170,7 +170,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_qtdir}/plugins/kf6/packagestructure/*
 %{_qtdir}/qml/org/kde/kwin
 %{_qtdir}/plugins/kwin
-%{_qtdir}/plugins/org.kde.kdecoration2/*
+%{_qtdir}/plugins/org.kde.kdecoration3/*
 %{_libdir}/libexec/kwin*
 %{_datadir}/qlogging-categories6/*
 %{_datadir}/knsrcfiles/*.knsrc
@@ -186,7 +186,7 @@ Development files for the KDE Frameworks 5 Win library.
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwintabbox.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwintouchscreen.so
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kwincompositing.so
-%{_qtdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so
+%{_qtdir}/plugins/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so
 %{_datadir}/applications/kcm_kwin_effects.desktop
 %{_datadir}/applications/kcm_kwin_scripts.desktop
 %{_datadir}/applications/kcm_kwin_virtualdesktops.desktop
