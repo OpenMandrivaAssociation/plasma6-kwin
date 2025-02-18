@@ -9,8 +9,8 @@
 
 Summary: The KWin window manager
 Name: plasma6-kwin
-Version: 6.3.0
-Release: %{?git:0.%{git}.}2
+Version: 6.3.1
+Release: %{?git:0.%{git}.}1
 URL: https://kde.org/
 License: GPL
 Group: System/Libraries
@@ -131,9 +131,6 @@ BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 The KWin window manager.
-
-%patchlist
-https://invent.kde.org/plasma/kwin/-/commit/c97bc26ca9de8b1462f6ccb05fb2dafe01cd82cb.patch
 
 %package x11
 Summary: X11 Window System support for KWin
