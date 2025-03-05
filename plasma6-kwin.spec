@@ -27,6 +27,7 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 Patch0: https://invent.kde.org/plasma/kwin/-/commit/bb263454.patch
 Patch1: https://invent.kde.org/plasma/kwin/-/commit/e652bdd3.patch
 
+BuildRequires: appstream
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
 BuildRequires: pkgconfig(epoxy)
