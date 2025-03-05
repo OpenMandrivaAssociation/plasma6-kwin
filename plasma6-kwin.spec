@@ -10,7 +10,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 6.3.2.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: https://kde.org/
 License: GPL
 Group: System/Libraries
@@ -22,6 +22,10 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 #Patch0: kwin-5.10.3-workaround-clang-bug-33617.patch
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
+
+# Fix black screen with some multi monitor configurations (angry)
+Patch0: https://invent.kde.org/plasma/kwin/-/commit/bb263454.patch
+Patch1: https://invent.kde.org/plasma/kwin/-/commit/e652bdd3.patch
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
