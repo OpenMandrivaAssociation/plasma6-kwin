@@ -39,6 +39,7 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Multimedia)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6Qml)
+BuildRequires: cmake(Qt6QmlCore)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6QuickWidgets)
 BuildRequires: cmake(Qt6Sensors)
@@ -116,6 +117,8 @@ BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(libdisplay-info)
 BuildRequires: cmake(KPipeWire) > 5.27.50
 BuildRequires: cmake(KWayland)
+BuildRequires: pkgconfig(vulkan)
+BuildRequires: cmake(VulkanHeaders)
 # FIXME Package QAccessibilityClient6 and BR it
 BuildRequires: x11-server-xwayland
 BuildRequires: hwdata
