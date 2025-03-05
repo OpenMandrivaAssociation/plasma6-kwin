@@ -10,7 +10,7 @@
 Summary: The KWin window manager
 Name: plasma6-kwin
 Version: 6.3.2.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 URL: https://kde.org/
 License: GPL
 Group: System/Libraries
@@ -23,6 +23,11 @@ Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwin-%{version}.t
 # (tpg) is it still needed ?
 #Patch1: kwin-5.3.0-enable-minimizeall.patch
 
+# Fix black screen with some multi monitor configurations (angry)
+Patch0: https://invent.kde.org/plasma/kwin/-/commit/bb263454.patch
+Patch1: https://invent.kde.org/plasma/kwin/-/commit/e652bdd3.patch
+
+BuildRequires: appstream
 BuildRequires: pkgconfig(egl)
 BuildRequires: %{_lib}EGL_mesa-devel
 BuildRequires: pkgconfig(epoxy)
@@ -35,6 +40,7 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Multimedia)
 BuildRequires: cmake(Qt6Network)
 BuildRequires: cmake(Qt6Qml)
+BuildRequires: cmake(Qt6QmlCore)
 BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6QuickWidgets)
 BuildRequires: cmake(Qt6Sensors)
@@ -112,6 +118,8 @@ BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(libdisplay-info)
 BuildRequires: cmake(KPipeWire) > 5.27.50
 BuildRequires: cmake(KWayland)
+BuildRequires: pkgconfig(vulkan)
+BuildRequires: cmake(VulkanHeaders)
 # FIXME Package QAccessibilityClient6 and BR it
 BuildRequires: x11-server-xwayland
 BuildRequires: hwdata
